@@ -1,0 +1,78 @@
+<html> 
+  
+<head> 
+    <title>ES6</title> 
+    <style>
+        table,tr,td,th{
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 20px;
+        }
+    </style>
+</head> 
+<body> 
+    <table>
+        <tr>
+            <th colspan="2">var vs let</th>
+            <th>find</th>
+        </tr>
+        <tr>
+            <td>
+                <script src="JSfiles/es6.js"></script>
+                <h3 style="color: red;">check console</h4>
+            </td><!-- let var -->
+            <td>
+                <p style="color: green;">see the use of set internal</p>
+                <h3 id="var" style="color:black;">GeeksForGeeks</h1> 
+                <h3 id="let" style="color:black;">GeeksForGeeks</h1>
+                <button id="btn" onclick="colour()">Start</button> 
+                <!-- executing function on button click -->
+  
+                <script type="text/javascript"> 
+                    function colour() {
+                        setInterval(function() { 
+                            if (document.getElementById('var').style.color == 'black') 
+                                var col1 = 'blue'; 
+                            else 
+                                col1 = 'black'; 
+                            // setting value of color 1 through var 
+                            if (document.getElementById('let').style.color == 'black') { 
+                                let col2 = 'red'; 
+                            } else { 
+                                col2 = 'black'; 
+                            } 
+                            // setting value of color 2 through let 
+  
+                            document.getElementById('var').style.color = col1; 
+                            document.getElementById('let').style.color = col2; 
+                            // changing color of h1 in html 
+                        }, 500); 
+                    } 
+                </script>
+            </td><!-- let var -->
+            <td>
+                <p id="demo">
+                    The find() method returns the value of the first element in an array that pass a test.
+                </p>
+                <button onclick="myFunction()">Try it</button>
+                <script>
+                    var ages = [3, 10, 18, 20];
+                    function checkAdult(age) {
+                        return age >= 18;
+                    }
+                    
+                    function myFunction() {
+                        document.getElementById("demo").innerHTML = ages.find(checkAdult);    
+                    }    
+                </script>
+            </td><!-- find -->
+        </tr>
+    </table>
+    
+</body> 
+  
+</html> 

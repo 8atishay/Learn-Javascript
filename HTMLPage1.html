@@ -1,21 +1,41 @@
 ﻿<!DOCTYPE html>
 <head>
     <title></title>
+    <style>
+        a:visited{
+            text-decoration: none;
+            color:blue;
+        }
+        button{
+            margin:2px;
+        }
+    </style>
     <script>
         function myfun2() {
             document.getElementById("p2").innerHTML="welcome again"
         }
     </script>
-    <script src="JSdemo/welcome.js"></script>
+    <script src="JSfiles/welcome.js"></script>
 </head>
 <body>
+    <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Official JavaScript Documentation</a></h1>
     <p id="p1">p1</p>
-    <p id="p2">p2</p>
-    <p id="p3">p3</p>
+    <p id="p2">inner2</p>
+    <p id="p3">external</p>
+    
     <script>
         document.getElementById("p1").innerHTML = "hello"
     </script>
+    
     <button onclick="myfun2()">call me</button>
-    <button onclick="myfun3()">call me 3</button>
+    <button onclick="myfun3()">call me 3</button><br>
+    <button onclick="document.write('Document.write is used here to calculate 5+6='+(5+6))">Document.write</button><br>
+    <button onclick="alert('alert')">alert</button><br>
+    <button onclick="console.log('console '+(5+6))">console</button><br>
+
+    <script>
+        document.write("document.write is used here to calculate 5+6="+(5+6));
+    </script>
+
 </body>
 </html>

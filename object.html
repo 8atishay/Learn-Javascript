@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <style>
+            table,th,td{
+                border: 1px solid black;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>String</th>
+                <th>Array</th>
+                <th>Dates</th>
+                <th>custom object</th>
+            </tr>
+            <tr>
+                <td>
+                    <p id="pstring"></p>
+                    <script>
+                    name1=new String("name1");
+                    name4="welcome admin";
+                    text=document.getElementById("pstring");
+                
+                    text.innerHTML = text.innerHTML+name1+"<br>";
+                    text.innerHTML = text.innerHTML+name4+"<br>";
+                    text.innerHTML = text.innerHTML+(name1==name4)+"<br>";
+                    text.innerHTML = text.innerHTML+name4.indexOf("admin")+"<br>";
+                    text.innerHTML = text.innerHTML+name4.slice(5,10)+"<br>";
+                    text.innerHTML = text.innerHTML+name4.substring(5,10)+"<br>";
+                    //substring cant have negative value
+                    </script>
+                </td><!-- string -->   
+                <td>
+                    <p id="parray"><br></p>
+                    <script>
+                        array= ["Banana", "Apple", "Mango",33];
+                        text=document.getElementById("parray");
+                        text.innerHTML = text.innerHTML+array+"<br>";
+                    
+                        text.innerHTML = text.innerHTML+array.length+"<br>";
+                    
+                        text.innerHTML = text.innerHTML+array.sort()+"<br>";
+                        // The forEach() method calls a function once for each element in an array, in order.
+                        arr="<ul>";
+                    
+                        array.forEach(element => {
+                            arr+="<li>"+element+"</li>";
+                        });
+                        text.innerHTML = text.innerHTML+arr+"<br>";
+                    
+                        array.push('<b>fpush</b>');
+                        text.innerHTML = text.innerHTML+array+"<br>";
+                        array.pop('<b>fpush</b>')
+                        y= text.innerHTML;
+                        text.innerHTML = "<b>used pop<b> <br>";
+                        text.innerHTML = y+text.innerHTML+array+"<br>";
+
+                        
+                        text.innerHTML = text.innerHTML+array.join(" fjoin ")+"<br>";
+                        // The join() method returns the array as a string.
+                    
+                        array.splice(1,2,"kiwi","guava fsplice");
+                        // The splice() method adds/removes items to/from an array, and returns the removed item(s).
+                        // array.splice(index, howmany, item1, ....., itemX)
+                        text.innerHTML = text.innerHTML+array+"<br>";
+                    
+                        arrray2=["lichi fconcat"];
+                        array3 = array.concat(arrray2);
+                        text.innerHTML = text.innerHTML+array3+"<br>";
+                    </script>   
+                </td><!-- array -->
+                <td>
+                    <h4>months go by [0-11] index</h4>
+                    <p id="pdates"></p>
+                    <script>
+                        text=document.getElementById("pdates");
+                        var date = new Date();
+                        text.innerHTML = text.innerHTML+date+"<br>";
+                        text.innerHTML = text.innerHTML+date.getFullYear()+"<br>";
+                        text.innerHTML = text.innerHTML+date.getSeconds()+"<br>";
+                        text.innerHTML = text.innerHTML+date.getMilliseconds()+"<br>";
+                        text.innerHTML = text.innerHTML+date.getTime()+"<br>";
+
+                        var date = new Date(1998,12,8);
+                        text.innerHTML = text.innerHTML+date+"<br>";
+
+                        var date = new Date("8/5/1998");//month,day,year
+                        text.innerHTML = text.innerHTML+date+"<br>";
+
+                        var date = new Date("may 8 1998");//month,day,year
+                        text.innerHTML = text.innerHTML+date+"<br>";
+                        
+                    </script>
+                </td><!-- dates -->
+                <td>
+                    <p id="pcust"><strong>new</strong> keyword is used for object creation</p>
+                    <script>
+                        user = new Object();
+                        user.name="name";
+                        user.address="address";
+                        user.method="method = new Object()"
+                        const text=document.getElementById("pcust");
+                        document.write(user.name+" "+user.address+" "+user.method+"<br>");
+
+                        function userf(name2,address2){
+                            this.name2=name2;
+                            this.address2=address2;
+                            this.method="method = using fuction";
+                        }
+                        var fuser2 = new userf("fname","faddress");
+                        document.write(fuser2.name2+" "+fuser2.address2+" "+fuser2.method+"<br>");
+                    </script>
+                </td><!-- custom obj -->
+            </tr>
+        </table>
+    </body>
+</html>
