@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <style>
+            table,th,td{
+                border: 1px solid black;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            td{
+                vertical-align: top;
+            }
+            button.DOM{
+                font-size:20px ;
+                margin: 1px;
+            }
+            #container{
+                width: 400px;
+                height: 400px;
+                background: blue;
+            }  
+            #animate{
+                width: 50px;
+                height: 50px;
+                position: relative;
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <th>DOM</th>
+            <th>Animation</th>
+            <th>Event Listner</th>
+            <tr>
+                <td>
+                    DOM: Document Object Model<br>
+                    BOM: Browser Object Model<br><br>
+                    <p style="color: red;"><strong>Note:</strong> Other than getElementBYID any other get element funtion returns a array of elements</p>
+                    </h3>
+                    <button class="DOM" onclick="tag()">get element by tag</button><br>
+                    <button class="DOM" onclick="clas()">get element by class</button><br>
+                    <button class="DOM" onclick="qsa()">get element by querySelectorAll</button>
+                    <p class="clas">this will change by tagname</p>
+                    <p class="clas">this will change by classname</p>
+                    <h4 class="clas">this h4 heading has same class as above two paras</h4>
+                    <script>
+                        y=document.querySelectorAll("h4.clas");
+                        function qsa(){
+                            y[0].innerHTML="changed using qsa ";
+                        }
+                        x = document.getElementsByClassName("p");
+                        function tag(){
+                            x[0].innerHTML="changed using tagname";
+                        }
+                        x = document.getElementsByClassName("clas");
+                        function clas(){
+                            x[1].innerHTML="changed using classname";
+                        }
+                        
+                    </script>
+                </td><!-- DOM -->
+                <td>
+                    <div id="container">
+                        <div id="animate"></div>
+                    </div>
+                    <script>
+                        function moveOn(){
+                            var elem =document.getElementById("animate");
+                            pos =0;
+                            var id =setInterval(frame,5);
+                            function frame(){
+                                if(pos==350){
+                                    clearInterval(id);
+                                }
+                                else{
+                                    pos++;
+                                    elem.style.top=pos+"px";
+                                    elem.style.left=pos+"px";
+                                    elem.innerHTML=pos;
+                                }
+                            }
+                        }
+                    </script>
+                    <button onclick="moveOn()">click here</button>
+                </td><!-- animation-->
+                <td>
+                    <button id="event">EventListner</button>
+                    <p id="demo"></p>
+                    <script>
+                        buto=document.getElementById("event");
+                        
+                        buto.addEventListener("click",fun1);
+                        p=document.getElementById("demo");
+                        function fun1(){
+                            demo.innerHTML+="Clicked<br>";
+                        }
+
+                        buto.addEventListener("mouseover",fun2);
+                        p=document.getElementById("demo");
+                        function fun2(){
+                            demo.innerHTML+="over<br>";
+                        }
+
+                        buto.addEventListener("mouseout",fun3);
+                        p=document.getElementById("demo");
+                        function fun3(){
+                            demo.innerHTML+="out<br>";
+                        }
+                    </script>
+                </td><!-- EventListner -->
+            </tr>
+        </table>
+    </body>
+</html>

@@ -19,6 +19,7 @@
         <tr>
             <th colspan="2">var vs let</th>
             <th>find</th>
+            <th>Navigatror</th>
         </tr>
         <tr>
             <td>
@@ -70,6 +71,18 @@
                     }    
                 </script>
             </td><!-- find -->
+            <td id="demo2">
+                <script>
+                    document.getElementById("demo2").innerHTML+="cookieEnabled: "+navigator.cookieEnabled+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="appname: "+navigator.appName+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="appcodename: "+navigator.appCodeName+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="product: "+navigator.product+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="useragent: "+navigator.userAgent+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="language: "+navigator.language+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="online: "+navigator.onLine+"<br><br>";
+                    document.getElementById("demo2").innerHTML+="javaenabled: "+navigator.javaEnabled()+"<br><br>";
+                </script>
+            </td><!--navigator-->
         </tr>
     </table>
     

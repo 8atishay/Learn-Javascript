@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body>
+        
+        <ul>
+            <li>
+                Try Catch<br>
+                <p id="try"></p>
+                <script>
+                    try{
+                        addalert("hello");
+                    }
+                    catch(err){
+                        document.getElementById("try").innerHTML+=err.message;
+                    }
+                </script>
+            </li>
+            <li>
+                Throw and Finally<br>
+                <p id="throw"></p>
+                add number: <input type="text" id="txt2">
+                <button onclick="validation()">call me</button>
+                <script>
+                    function validation(){
+                        var message,x;
+                        message=document.getElementById("throw");
+                        message.innerHTML="";
+                        x=document.getElementById("txt2").value;
+
+                        try{
+                            if(x=="") throw "empty value";
+                            if(isNaN(x)) throw "not a number";
+                            x=Number(x);
+                            if(x<10) throw "very low value";
+                            if(x>20) throw "very high";
+                        }
+                        catch(err){
+                            message.innerHTML="value is " + err;
+                        }
+                        finally{
+                            document.getElementById("txt2").value='';
+                        }
+                    }
+                </script>
+            </li>
+    </body>
+</html>
